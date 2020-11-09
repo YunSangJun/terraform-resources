@@ -15,23 +15,14 @@ Export the service account as json file after creating.
 
 ```
 $ terraform init
-
-Initializing the backend...
-
-Initializing provider plugins...
-- Finding latest version of hashicorp/google...
-- Installing hashicorp/google v3.46.0...
-- Installed hashicorp/google v3.46.0 (signed by HashiCorp)
 ...
-
-* hashicorp/google: version = "~> 3.46.0"
 
 Terraform has been successfully initialized!
 ```
 
 ## Provision GKE cluster
 
-    1. Set your environment
+1. Set your environment
 
         ## "GOOGLE_APPLICATION_CREDENTIALS" is a file's path exported from service account.
         ```
@@ -45,7 +36,7 @@ Terraform has been successfully initialized!
         export REGION="asia-northeast3"
         ```
 
-    2. Run "terraform apply" command with the enviroment
+2. Run "terraform apply" command with the enviroment
 
         ```
         $ terraform apply \
@@ -53,35 +44,11 @@ Terraform has been successfully initialized!
             -var "region=$REGION" \
             -var "gke_num_nodes=1" \
             -var "gke_machine_type=e2-standard-2"
-
-        An execution plan has been generated and is shown below.
-        Resource actions are indicated with the following symbols:
-        + create
-
-        Terraform will perform the following actions:
         ...
-
-        Plan: 4 to add, 0 to change, 0 to destroy.
-
-        Changes to Outputs:
-        + kubernetes_cluster_name = "booming-pride-290113-gke"
-
-        Do you want to perform these actions?
-        Terraform will perform the actions described above.
-        Only 'yes' will be accepted to approve.
-
-        Enter a value: yes  
-        ...
-
-        google_compute_network.vpc: Creating...
-        ...
-
-        Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-
+        
         Outputs:
-
-        kubernetes_cluster_name = booming-pride-290113-gke
-        region = asia-northeast3
+          + kubernetes_cluster_name = "my-project-gke"
+          + region                  = "asia-northeast3"
         ```
 
 ## Destroy GKE cluster
@@ -90,19 +57,6 @@ Terraform has been successfully initialized!
 $ terraform destroy \
     -var "project_id=$PROJECT_ID" \
     -var "region=$REGION"
-
-An execution plan has been generated and is shown below.
-Resource actions are indicated with the following symbols:
-  - destroy
-
-Terraform will perform the following actions:
-...
-
-Do you really want to destroy all resources?
-  Terraform will destroy all your managed infrastructure, as shown above.
-  There is no undo. Only 'yes' will be accepted to confirm.
-
-  Enter a value: yes
 ...
 
 Destroy complete! Resources: 3 destroyed.
