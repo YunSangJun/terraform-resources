@@ -1,1 +1,1 @@
-# terraform-scripts
+# terraform-resources
