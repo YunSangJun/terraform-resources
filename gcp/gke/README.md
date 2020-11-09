@@ -9,7 +9,7 @@ Create a service account with the following roles.
 
 Refer a [Create a service account](https://cloud.google.com/docs/authentication/production#create_service_account) guide.
 
-After creating the service account export as json file.
+Export the service account as json file after creating.
 
 ## Initialize Terraform workspace
 
