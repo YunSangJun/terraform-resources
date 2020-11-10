@@ -20,7 +20,7 @@ Refer a [Create a service account](https://cloud.google.com/docs/authentication/
 Export the service account as json file when creating.
 The json file will be used the next step.
 
-## Clone GKE terraform code
+## Clone terraform code for GKE
 
 ```
 $ git clone https://github.com/YunSangJun/terraform-resources
